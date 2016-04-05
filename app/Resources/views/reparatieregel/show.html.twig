@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ReparatieRegel</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reparatieRegel.id }}</td>
+            </tr>
+            <tr>
+                <th>Aantal</th>
+                <td>{{ reparatieRegel.aantal }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reparatieregel_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

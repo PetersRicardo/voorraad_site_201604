@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ReparatieOrder</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reparatieOrder.id }}</td>
+            </tr>
+            <tr>
+                <th>Voertuig</th>
+                <td>{{ reparatieOrder.voertuig }}</td>
+            </tr>
+            <tr>
+                <th>Kilometerstand</th>
+                <td>{{ reparatieOrder.kilometerstand }}</td>
+            </tr>
+            <tr>
+                <th>Datum</th>
+                <td>{% if reparatieOrder.datum %}{{ reparatieOrder.datum|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reparatieorder_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

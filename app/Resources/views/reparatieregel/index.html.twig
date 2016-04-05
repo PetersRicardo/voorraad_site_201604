@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ReparatieRegel list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Aantal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reparatieRegel in reparatieRegels %}
+            <tr>
+                <td><a href="{{ path('reparatieregel_show', { 'id': reparatieRegel.id }) }}">{{ reparatieRegel.id }}</a></td>
+                <td>{{ reparatieRegel.aantal }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('reparatieregel_show', { 'id': reparatieRegel.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

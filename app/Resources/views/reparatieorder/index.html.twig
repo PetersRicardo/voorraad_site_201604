@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ReparatieOrder list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Voertuig</th>
+                <th>Kilometerstand</th>
+                <th>Datum</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reparatieOrder in reparatieOrders %}
+            <tr>
+                <td><a href="{{ path('reparatieorder_show', { 'id': reparatieOrder.id }) }}">{{ reparatieOrder.id }}</a></td>
+                <td>{{ reparatieOrder.voertuig }}</td>
+                <td>{{ reparatieOrder.kilometerstand }}</td>
+                <td>{% if reparatieOrder.datum %}{{ reparatieOrder.datum|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('reparatieorder_show', { 'id': reparatieOrder.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
